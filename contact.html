@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Laetitia Meillon</title>
+<meta name="description" content="Contactez Laetitia Meillon pour échanger sur votre gestion administrative et digitale.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="brand" aria-label="Laetitia Meillon — Accueil">
+      <img src="logo.svg" alt="Laetitia Meillon">
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="prestations.html">Prestations</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn--primary">
+        Échangeons
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="prestations.html">Prestations</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-menu__footer">
+    <a href="contact.html" class="btn btn--primary">Échangeons</a>
+    <span style="font-size:var(--fs-sm); color:var(--ink-soft);">contact@laetitiameillon.fr</span>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1>Parlons de votre quotidien professionnel.</h1>
+      <p class="lede">Une question, un besoin précis ou simplement l'envie d'échanger : ce formulaire est le premier pas vers un quotidien plus léger.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <div class="contact-info reveal">
+        <div class="contact-info__block">
+          <h3>Email</h3>
+          <a href="mailto:contact@laetitiameillon.fr">contact@laetitiameillon.fr</a>
+        </div>
+        <div class="contact-info__block">
+          <h3>Téléphone</h3>
+          <p>[Numéro à compléter]</p>
+        </div>
+        <div class="contact-info__block">
+          <h3>Réseaux</h3>
+          <div class="contact-info__socials">
+            <a href="???" rel="noopener">LinkedIn</a>
+            <a href="???" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form" class="reveal" novalidate>
+        <div class="form-grid form-grid--split">
+          <div class="field">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required autocomplete="given-name">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required autocomplete="family-name">
+            <span class="field__error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top:var(--space-sm);">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="sujet">Sujet</label>
+            <input type="text" id="sujet" name="sujet" required>
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <span class="field__error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-status" role="status" aria-live="polite"></div>
+
+        <div style="margin-top:var(--space-sm);">
+          <button type="submit" class="btn btn--primary">
+            Envoyer le message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="Laetitia Meillon">
+        <p>Assistante digitale, spécialisée en gestion administrative — au service des indépendants, artisans et petites entreprises.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Suivre</h4>
+        <ul>
+          <li><a href="???" rel="noopener">LinkedIn</a></li>
+          <li><a href="???" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:contact@laetitiameillon.fr">contact@laetitiameillon.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Laetitia Meillon. Tous droits réservés.</span>
+      <div class="footer-bottom__links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html#confidentialite">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
