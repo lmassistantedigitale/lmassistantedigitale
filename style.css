@@ -90,7 +90,7 @@ svg{ display: block; }
 h1,h2,h3,h4{
   font-family: var(--font-display);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 0.96;
   letter-spacing: -0.01em;
   margin: 0;
   color: var(--ink);
@@ -204,7 +204,7 @@ section{ position: relative; }
   font-weight: 700;
   font-size: var(--fs-sm);
   letter-spacing: 0.01em;
-  padding: 0.95em 1.7em;
+  padding: 0.6em 1.2em;
   border-radius: 999px;
   transition: transform 0.45s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color .35s var(--ease);
   white-space: nowrap;
@@ -274,7 +274,7 @@ section{ position: relative; }
 }
 .site-header.is-scrolled{
   border-bottom-color: var(--line);
-  box-shadow: 0 8px 30px -20px rgba(27,25,24,0.25);
+  box-shadow: 0 8px 36px -16px rgba(27,25,24,0.26);
 }
 
 .site-header__inner{
@@ -286,7 +286,11 @@ section{ position: relative; }
 }
 
 .brand{ display: flex; align-items: center; }
-.brand img, .brand svg{ height: 30px; width: auto; }
+.brand img, .brand svg{ height: 84px; width: auto; }
+
+@media (max-width: 900px){
+  .brand img, .brand svg{ height: 70px; width: auto; }
+}
 
 .main-nav{ display: none; }
 .main-nav ul{ display: flex; align-items: center; gap: clamp(1.4rem, 2vw, 2.4rem); }
@@ -301,8 +305,11 @@ section{ position: relative; }
 .main-nav a::after{
   content: '';
   position: absolute;
-  left: 0; bottom: -2px;
-  width: 0; height: 1.5px;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2.2px;
+  border-radius: 6px;
   background: var(--accent-deep);
   transition: width .35s var(--ease);
 }
@@ -782,7 +789,7 @@ section{ position: relative; }
 @media (min-width: 780px){
   .footer-top{ grid-template-columns: 1.3fr 1fr 1fr; }
 }
-.footer-brand img{ height: 28px; margin-bottom: var(--space-sm); }
+.footer-brand img{ height: 60px; margin-bottom: 12px; }
 .footer-brand p{ color: var(--ink-soft); font-size: var(--fs-sm); max-width: 32ch; }
 .footer-col h4{ font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); margin-bottom: var(--space-sm); }
 .footer-col ul{ display: flex; flex-direction: column; gap: 0.6em; }
