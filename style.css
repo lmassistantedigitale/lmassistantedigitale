@@ -1,8 +1,3 @@
-/* =========================================================
-   LAETITIA MEILLON — Assistante digitale
-   Design system : architecture scandinave / éditorial haut de gamme
-   ========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 /* ---------------------------------------------------------
@@ -36,7 +31,7 @@
   --fs-lg:   clamp(1.5rem, 1.35rem + 0.7vw, 1.95rem);
   --fs-xl:   clamp(2.1rem, 1.8rem + 1.4vw, 3rem);
   --fs-xxl:  clamp(2.7rem, 2.1rem + 2.8vw, 4.6rem);
-  --fs-hero: clamp(2.9rem, 2rem + 4.2vw, 5.6rem);
+  --fs-hero: clamp(2.6rem, 1.7rem + 3.9vw, 5.1rem);
 
   /* Espacements */
   --space-3xs: 0.25rem;
@@ -90,7 +85,7 @@ svg{ display: block; }
 h1,h2,h3,h4{
   font-family: var(--font-display);
   font-weight: 500;
-  line-height: 0.96;
+  line-height: 0.94;
   letter-spacing: -0.01em;
   margin: 0;
   color: var(--ink);
@@ -212,15 +207,16 @@ section{ position: relative; }
 .btn svg{ width: 15px; height: 15px; transition: transform 0.4s var(--ease); }
 
 .btn--primary{
-  background: var(--ink);
+  background: var(--accent-deep);
   color: var(--white);
-  border: 1px solid var(--ink);
+  border: 1px solid var(accent-deep);
 }
+
 .btn--primary:hover{
   background: var(--accent-deep);
   border-color: var(--accent-deep);
-  transform: translateY(-2px);
 }
+
 .btn--primary:hover svg{ transform: translateX(3px); }
 
 .btn--ghost{
