@@ -282,10 +282,10 @@ section{ position: relative; }
 }
 
 .brand{ display: flex; align-items: center; }
-.brand img, .brand svg{ height: 84px; width: auto; }
+.brand img, .brand svg{ height: 74px; width: auto; }
 
 @media (max-width: 900px){
-  .brand img, .brand svg{ height: 70px; width: auto; }
+  .brand img, .brand svg{ height: 56px; width: auto; }
 }
 
 .main-nav{ display: none; }
