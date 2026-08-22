@@ -38,7 +38,7 @@
   --space-2xs: 0.5rem;
   --space-xs:  0.85rem;
   --space-sm:  0.9rem;
-  --space-md:  2rem;
+  --space-md:  1.8rem;
   --space-lg:  clamp(3rem, 2.3rem + 3vw, 5.5rem);
   --space-xl:  clamp(4.5rem, 3.2rem + 5.5vw, 9rem);
   --space-2xl: clamp(6rem, 4rem + 8vw, 12rem);
@@ -418,10 +418,9 @@ section{ position: relative; }
   gap: var(--space-md);
   padding-top: var(--space-sm);
   border-top: 1px solid var(--line);
-  flex-wrap: wrap;
 }
 .hero__meta div{ font-size: var(--fs-xs); color: var(--ink-faint); max-width: 22ch; line-height: 1.5; }
-.hero__meta strong{ display:block; font-family: var(--font-display); font-size: var(--fs-lg); color: var(--ink); font-weight: 500; }
+.hero__meta strong{ display: block; font-family: var(--font-display); font-size: var(--fs-lg); color: var(--ink); font-weight: 500; letter-spacing: -0.01em; line-height: 1.1; }
 
 .hero__visual{ position: relative; }
 .hero__lines{ width: 100%; height: auto; }
@@ -433,7 +432,7 @@ section{ position: relative; }
 /* ---------------------------------------------------------
    SECTION LAYOUT HELPERS
    --------------------------------------------------------- */
-.section{ padding: var(--space-xl) 0; }
+.section{ padding: var(--space-lg) 0; }
 .section--soft{ background: var(--bg-soft); }
 .section--deep{ background: var(--bg-deep); }
 .section--tight{ padding: var(--space-lg) 0; }
