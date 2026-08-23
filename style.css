@@ -805,3 +805,21 @@ section{ position: relative; }
 
 /* stagger helper */
 .reveal-group > *{ transition-delay: calc(var(--i, 0) * 70ms); }
+
+.legal-notice {
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+.legal-notice a {
+  color: #b87786;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+.legal-notice a:hover {
+  color: #b87786;
+  text-decoration: none;
+}
