@@ -636,7 +636,7 @@ section{ position: relative; }
    --------------------------------------------------------- */
 .page-hero{ padding: clamp(2.5rem,5vw,3.5rem) 0 var(--space-lg); border-bottom: 1px solid var(--line); }
 .page-hero h1{ font-size: var(--fs-xxl); max-width: 18ch; margin-top: var(--space-sm); }
-.page-hero .lede{ margin-top: var(--space-sm); font-size: var(--fs-md); }
+.page-hero .lede{ margin-top: var(--space-sm); font-size: var(--fs-base); }
 
 /* ---------------------------------------------------------
    À PROPOS — page complète
@@ -785,7 +785,7 @@ section{ position: relative; }
    --------------------------------------------------------- */
 .legal-content{ display: flex; flex-direction: column; gap: var(--space-lg); max-width: 74ch; }
 .legal-block h2{ font-size: var(--fs-lg); margin-bottom: var(--space-xs); }
-.legal-block p, .legal-block li{ color: var(--ink-soft); font-size: var(--fs-sm); line-height: 1.75; }
+.legal-block p, .legal-block li{ color: var(--ink-soft); font-size: var(--fs-base); line-height: 1.5; }
 .legal-block li{ padding-left: 1em; position: relative; }
 .legal-block li::before{ content:'—'; position:absolute; left:0; color: var(--accent-deep); }
 .legal-block ul{ display:flex; flex-direction:column; gap:0.4em; margin-top: var(--space-2xs); }
