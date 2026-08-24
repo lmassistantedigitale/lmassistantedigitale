@@ -588,7 +588,7 @@ section{ position: relative; }
 }
 .pricing-card{
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
