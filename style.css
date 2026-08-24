@@ -823,3 +823,19 @@ section{ position: relative; }
   color: #b87786;
   text-decoration: none;
 }
+
+
+.hero__visual{position:relative;overflow:hidden}
+.hero__visual::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(to bottom,
+    transparent 0%,
+    transparent 58%,
+    rgba(255,255,255,.08) 70%,
+    rgba(255,255,255,.35) 82%,
+    #fff 100%
+  );
+}
