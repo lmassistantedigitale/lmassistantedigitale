@@ -170,7 +170,7 @@ function initContactForm(){
 
     // Pas de backend connecté : confirmation visuelle uniquement.
     if(status){
-      status.textContent = 'Merci pour votre message ! Laetitia vous répondra dans les meilleurs délais.';
+      status.textContent = 'Merci pour votre message ! Je vous répondrai dans les meilleurs délais.';
       status.classList.add('is-visible', 'form-status--success');
     }
     form.reset();
