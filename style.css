@@ -596,13 +596,13 @@ section{ position: relative; }
   transition: border-color .35s var(--ease), transform .35s var(--ease);
   background: var(--white);
 }
-.pricing-card:hover{ border-color: var(--line-strong); transform: translateY(-4px); }
+.pricing-card:hover{ border-color: var(--line-strong); transform: translateY(-2px); }
 .pricing-card--highlight{ border-color: var(--accent); background: var(--accent-soft); }
 .pricing-card__label{ font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
 .pricing-card--highlight .pricing-card__label{ color: var(--accent-ink); }
 .pricing-card h3{ font-size: var(--fs-lg); font-weight: 500; }
 .pricing-card__price{ font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink); }
-.pricing-card__price small{ font-family: var(--font-body); font-size: var(--fs-xs); color: var(--ink-faint); font-weight: 600; }
+.pricing-card__price small{ font-family: var(--font-body); font-size: var(--fs-sm); color: var(--ink-soft); font-weight: 600; }
 .pricing-card ul{ display: flex; flex-direction: column; gap: 0.6em; margin: var(--space-2xs) 0; }
 .pricing-card li{ font-size: var(--fs-sm); color: var(--ink-soft); display: flex; gap: 0.6em; align-items: flex-start; }
 .pricing-card li::before{ content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-deep); margin-top: 0.55em; flex-shrink: 0; }
@@ -612,7 +612,7 @@ section{ position: relative; }
   color: var(--ink-soft);
   border-left: 2px solid var(--accent);
   padding-left: var(--space-sm);
-  max-width: 60ch;
+  max-width: 80ch;
 }
 
 /* ---------------------------------------------------------
