@@ -79,7 +79,7 @@ body{
   text-rendering: optimizeLegibility;
 }
 
-img{ max-width: 100%; display: block; }
+img{ max-width: 110%; display: block; }
 svg{ display: block; }
 
 h1,h2,h3,h4{
@@ -278,6 +278,7 @@ section{ position: relative; }
 .brand img, .brand svg{ height: 74px; width: auto; }
 
 @media (max-width: 900px){
+  img{ max-width: 106%; display: block; }
   .brand img, .brand svg{ height: 56px; width: auto; }
 }
 
