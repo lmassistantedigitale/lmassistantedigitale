@@ -100,7 +100,10 @@ permalink: /contact
         </div>
       </div>
 
-      <form id="contact-form" class="reveal" novalidate>
+      <form id="contact-form" class="reveal" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="16178687-a2e2-489a-a52f-5c8aad9b9979">
+        <input type="hidden" name="subject" value="Nouveau message depuis LM Assistante digitale">
+        <input type="hidden" name="from_name" value="LM Assistante digitale">
         <div class="form-grid form-grid--split">
           <div class="field">
             <label for="prenom">Prénom</label>
@@ -135,7 +138,7 @@ permalink: /contact
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
         </div>
-        <p class="legal-notice">En envoyant ce message, vous acceptez la <a href="/politique-de-confidentialite">politique de confidentialité</a> du site. Ce formulaire ne fonctionne pas encore.</p>
+        <p class="legal-notice">En envoyant ce message, vous acceptez la <a href="/politique-de-confidentialite">politique de confidentialité</a> du site.</p>
       </form>
 
     </div>
