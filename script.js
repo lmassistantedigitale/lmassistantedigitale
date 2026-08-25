@@ -95,7 +95,7 @@ function initActiveNav(){
 }
 
 /* ---------------------------------------------------------
-   Formulaire de contact — validation côté client
+   Formulaire de contact — validation + envoi Web3Forms
    --------------------------------------------------------- */
 function initContactForm(){
   const form = document.querySelector('#contact-form');
@@ -114,7 +114,9 @@ function initContactForm(){
   const showError = (field, message) => {
     const wrapper = field.closest('.field');
     if(!wrapper) return;
+
     wrapper.classList.add('has-error');
+
     const errorEl = wrapper.querySelector('.field__error');
     if(errorEl) errorEl.textContent = message;
   };
@@ -122,7 +124,9 @@ function initContactForm(){
   const clearError = (field) => {
     const wrapper = field.closest('.field');
     if(!wrapper) return;
+
     wrapper.classList.remove('has-error');
+
     const errorEl = wrapper.querySelector('.field__error');
     if(errorEl) errorEl.textContent = '';
   };
@@ -130,32 +134,44 @@ function initContactForm(){
   const validateField = (field) => {
     const rule = validators[field.name];
     if(!rule) return true;
+
     const result = rule(field.value);
+
     if(result === true){
       clearError(field);
       return true;
     }
+
     showError(field, result);
     return false;
   };
 
   form.querySelectorAll('input, textarea').forEach(field => {
     field.addEventListener('blur', () => validateField(field));
+
     field.addEventListener('input', () => {
-      if(field.closest('.field')?.classList.contains('has-error')) validateField(field);
+      if(field.closest('.field')?.classList.contains('has-error')){
+        validateField(field);
+      }
     });
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     let isValid = true;
 
     form.querySelectorAll('input[required], textarea[required]').forEach(field => {
-      if(!validateField(field)) isValid = false;
+      if(!validateField(field)) {
+        isValid = false;
+      }
     });
 
     if(status){
-      status.classList.remove('form-status--success', 'form-status--error');
+      status.classList.remove(
+        'form-status--success',
+        'form-status--error'
+      );
     }
 
     if(!isValid){
@@ -163,16 +179,74 @@ function initContactForm(){
         status.textContent = 'Merci de corriger les champs indiqués avant d\'envoyer votre message.';
         status.classList.add('is-visible', 'form-status--error');
       }
+
       const firstError = form.querySelector('.has-error input, .has-error textarea');
       if(firstError) firstError.focus();
+
       return;
     }
 
-    // Pas de backend connecté : confirmation visuelle uniquement.
+    /* -------------------------------------------------------
+       Envoi réel vers Web3Forms
+       ------------------------------------------------------- */
+
     if(status){
-      status.textContent = 'Merci pour votre message ! Je vous répondrai dans les meilleurs délais.';
-      status.classList.add('is-visible', 'form-status--success');
+      status.textContent = 'Envoi de votre message…';
+      status.classList.add('is-visible');
     }
-    form.reset();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    if(submitButton){
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+    }
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if(data.success){
+        if(status){
+          status.textContent = 'Merci pour votre message ! Je vous répondrai dans les meilleurs délais.';
+          status.classList.remove('form-status--error');
+          status.classList.add('is-visible', 'form-status--success');
+        }
+
+        form.reset();
+
+        form.querySelectorAll('.has-error').forEach(wrapper => {
+          wrapper.classList.remove('has-error');
+        });
+
+        form.querySelectorAll('.field__error').forEach(error => {
+          error.textContent = '';
+        });
+
+      } else {
+        throw new Error(data.message || 'Une erreur est survenue.');
+      }
+
+    } catch(error) {
+      console.error('Web3Forms:', error);
+
+      if(status){
+        status.textContent = 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par email.';
+        status.classList.remove('form-status--success');
+        status.classList.add('is-visible', 'form-status--error');
+      }
+
+    } finally {
+      if(submitButton){
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+      }
+    }
   });
 }
