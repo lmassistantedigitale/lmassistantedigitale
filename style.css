@@ -170,7 +170,7 @@ section{ position: relative; }
   font-size: var(--fs-md);
   color: var(--ink-soft);
   line-height: 1.65;
-  max-width: 46ch;
+  max-width: 48ch;
 }
 
 .italic-serif{
